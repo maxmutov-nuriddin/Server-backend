@@ -72,7 +72,6 @@ const userProfileSchema = new mongoose.Schema({
   }]
 });
 
-
 // Настроим хранилище для Multer
 const storage = multer.diskStorage({
   destination: 'uploads/', // Папка для сохранения файлов
