@@ -7,8 +7,6 @@ const path = require('path');
 const fs = require('fs');
 const { v4: uuidv4 } = require('uuid'); // Импортируем UUID
 
-
-
 // Создаем экземпляр приложения Express
 const app = express();
 
@@ -573,7 +571,6 @@ app.get('/experiences/:id', async (req, res) => {
   }
 });
 
-
 app.delete('/experiences/:id', async (req, res) => {
   const { id } = req.params;  // Получаем id из параметров URL
 
@@ -965,7 +962,6 @@ app.delete('/users/:id', async (req, res) => {
   }
 });
 
-
 app.put('/users/:id', async (req, res) => {
   try {
     const updatedUser = await UserProfile.findByIdAndUpdate(
@@ -988,7 +984,6 @@ app.put('/users/:id', async (req, res) => {
     res.status(500).json({ error: "Internal server error" });
   }
 });
-
 
 app.put('/users/:id', async (req, res) => {
   const { role } = req.body; // Получаем роль из запроса
@@ -1015,12 +1010,6 @@ app.put('/users/:id', async (req, res) => {
     res.status(500).json({ message: 'Internal server error' });
   }
 });
-
-
-
-
-
-
 
 // Задаем порт для сервера
 const port = process.env.PORT || 5000;
